@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Miner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mystic Miner</h1>
+    </header>
+    <main>
+        <section class="earnings">
+            <h2>Your Earnings</h2>
+            <p>Total earnings: $1000</p>
+            <p>Withdrawable balance: $800</p>
+            <button>Withdraw</button>
+        </section>
+        <section class="offers">
+            <h2>Offers</h2>
+            <div class="offer">
+                <h3>Watch Ads</h3>
+                <p>Earn 1 Mystic Coin</p>
+                <button>Start Now</button>
+            </div>
+            <div class="offer">
+                <h3>Redeem Coin</h3>
+                <p>Paste Code Below to Redeem 1 Mystic Coin.</p>
+                <input type="text" id="redeemCode" placeholder="Enter redeem code">
+                <button id="redeemButton">Redeem</button>
+            </div>
+        </section>
+
+        <!-- Login Section -->
+        <section class="login">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Please Enter your Email ID" required>
+                <input type="password" id="loginPassword" placeholder="Please Enter your Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <section class="shop">
+            <h2>Shop ( Coming Soon )</h2>
+            <img src="cart.gif" alt="Shop Logo">
+            <button>Shop Now</button>
+        </section>
+
+
+        <!-- Register Section -->
+        <section class="register">
+            <h2>Register</h2>
+            <form id="registerForm">
+                <input type="email" id="registerEmail" placeholder="Please Enter your Email ID" required>
+                <input type="password" id="registerPassword" placeholder="Please Enter your Password" required>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mystic Miner. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript code to handle login -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var email = document.getElementById('loginEmail').value;
+            var password = document.getElementById('loginPassword').value;
+            // Here you can add code to handle login, such as sending the data to a server for authentication
+            console.log("Email:", email);
+            console.log("Password:", password);
+        });
+    </script>
+
+    <!-- JavaScript code to handle redeeming -->
+    <script>
+        document.getElementById('redeemButton').addEventListener('click', function() {
+            var redeemCode = document.getElementById('redeemCode').value;
+            if (redeemCode.trim() === '') {
+                alert('No code found. Please enter a redeem code.');
+            } else {
+                // Forward the redeem code to the server using AJAX or fetch
+                // Example:
+                // fetch('/redeem', {
+                //     method: 'POST',
+                //     body: JSON.stringify({ redeemCode: redeemCode }),
+                //     headers: {
+                //         'Content-Type': 'application/json'
+                //     }
+                // }).then(response => {
+                //     if (response.ok) {
+                //         // Handle successful redemption
+                //         document.getElementById('redeemCode').value = ''; // Clear the input field
+                //     } else {
+                //         // Handle error
+                //     }
+                // }).catch(error => {
+                //     console.error('Error redeeming:', error);
+                // });
+
+                // For demonstration purposes, clear the input field immediately
+                document.getElementById('redeemCode').value = ''; // Clear the input field
+            }
+        });
+
+        // Function called when Google Sign-In is successful
+        function onSignIn(googleUser) {
+            // Retrieve user information
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send this directly to your server!
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+/* styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap; /* Allow sections to wrap to next line */
+    justify-content: space-around;
+    padding: 20px;
+}
+
+section {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.earnings {
+    flex-basis: 40%; /* Set flex-basis to 40% */
+}
+
+.offers {
+    flex-basis: 50%; /* Set flex-basis to 50% */
+}
+
+.login, .register {
+    flex-basis: 30%; /* Set width for login and register section */
+    margin-top: 25px; /* Add margin to create space */
+}
+
+.login form, .register form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login form input, .register form input {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.login form button, .register form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.login form button:hover, .register form button:hover {
+    background-color: #45a049;
+}
+
+.shop {
+    flex-basis: 30%; /* Adjust width as needed */
+    margin-top: 25px; /* Add margin to create space */
+    text-align: center; /* Center-align content */
+}
+
+.shop h2 {
+    color: #333333; /* Heading color */
+    margin-bottom: 5px; /* Add some space below the heading */
+}
+
+.shop img {
+    max-width: 200px; /* Adjust the maximum width as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is centered */
+    margin: 0 auto 10px; /* Center the image horizontally and add some space below */
+}
+
+.shop button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+}
+
+.shop button:hover {
+    background-color: #45a049;
+}
+
+
+h1, h2, h3 {
+    color: #333333;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    text-align: center;
+    background-color: #333333;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Adjust space between text box and Redeem button */
+#redeemCode {
+    padding: 10px; /* Add padding for better appearance */
+    margin-right: 10px; /* Add margin to create space */
+}
